@@ -3,17 +3,17 @@ CREATE DATABASE moviesdb;
 USE moviesdb;
 
 CREATE TABLE Movies(
-	id INT PRIMARY KEY AUTO_INCREMENT, 
-	name VARCHAR(100),
-	mpaa VARCHAR(50),
-	synopsis TEXT
+id INT PRIMARY KEY AUTO_INCREMENT, 
+name VARCHAR(100),
+mpaa VARCHAR(50),
+synopsis TEXT
 );
 
 CREATE TABLE Showrooms(
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	name VARCHAR(100),
-	movie_id INT,
-	FOREIGN KEY (movie_id) REFERENCES Movies(id)
+id INT PRIMARY KEY AUTO_INCREMENT,
+name VARCHAR(100),
+movie_id INT,
+FOREIGN KEY (movie_id) REFERENCES Movies(id)
 );
 
 
@@ -48,10 +48,10 @@ ORDER BY mpaa ASC;
 
 -- 3. Mostrar todas las películas que no han sido calificadas.
 INSERT INTO Movies VALUES 
-	(NULL, "A Tale of Love and Darkness", "UNRATED", "A young boy's journey to become a writer; growing up in Jerusalem.");
+(NULL, "A Tale of Love and Darkness", "UNRATED", "A young boy's journey to become a writer; growing up in Jerusalem.");
 
 INSERT INTO Movies VALUES
-	(NULL, "Sausage Party", "UNRATED", "When Frank (Seth Rogen) the sausage learns that he will eventually become a meal, he tries to warn his supermarket pals about their similar fate.");
+(NULL, "Sausage Party", "UNRATED", "When Frank (Seth Rogen) the sausage learns that he will eventually become a meal, he tries to warn his supermarket pals about their similar fate.");
 
 
 SELECT id as ID_PELICULA, name as MOVIE, mpaa as RATE 
