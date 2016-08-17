@@ -1,5 +1,4 @@
 CREATE DATABASE moviesdb;
--- DROP DATABASE moviesdb; 
 USE moviesdb;
 
 CREATE TABLE Movies(
