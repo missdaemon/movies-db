@@ -15,6 +15,7 @@ movie_id INT,
 FOREIGN KEY (movie_id) REFERENCES Movies(id)
 );
 
+SELECT id, name FROM Movies;
 
 INSERT INTO Movies VALUES (160802, "Ghostbusters", "PG-13", "A paranormal researcher (Melissa McCarthy), a physicist (Kristen Wiig), a nuclear engineer (Kate McKinnon) and a subway worker (Leslie Jones) try to rid New York of ghosts that can possess humans."),
 (NULL, "Suicide Squad", "PG-13", "Intelligence officer Amanda Waller (Viola Davis) assembles a team of dangerous, incarcerated supervillains (Will Smith, Margot Robbie) for a covert mission."),
@@ -32,6 +33,19 @@ INSERT INTO Movies VALUES (160802, "Ghostbusters", "PG-13", "A paranormal resear
 (NULL, "THE PURGE: ELECTION YEAR", "R", "As a young girl, Sen. Charlene Roan survived the annual night of lawlessness that took the lives of her family members. As a presidential candidate, Roan is determined to end the yearly tradition of blood lust once and for all. When her opponents hatch a deadly scheme, the senator finds herself trapped on the streets of Washington, D.C., just as the latest Purge gets underway. Now, it's up to Leo Barnes (Frank Grillo), her head of security, to keep her alive during the next 12 hours of mayhem."),
 (NULL, "Café Society", "PG-13", "A young Bronx native moves to Hollywood where he falls in love with the secretary of his powerful uncle. After returning to New York he is swept up in the vibrant world of high society nightclub life."),
 (NULL, "HELL OR HIGH WATER", "R", "A divorced dad and his ex-con brother resort to a desperate scheme in order to save their family's farm in West Texas.");
+
+INSERT INTO Showrooms VALUES(
+(1,"Sala 01","160803"),
+(NULL,"Sala 02","160804"),
+(NULL,"Sala 03","160805"),
+(NULL,"Sala 04","160806"),
+(NULL,"Sala 05","160807"),
+(NULL,"Sala 06","160809"),
+(NULL,"Sala 07","160813"),
+(NULL,"Sala 08","160815"),
+(NULL,"Sala 09","160812"),
+(NULL,"Sala 10","160810")
+);
 
 -- 1. Mostrar el nombre de todas las películas.
 SELECT id AS ID_PELICULA, name AS MOVIE FROM Movies;
@@ -58,6 +72,13 @@ FROM Movies
 WHERE mpaa = "UNRATED";
 
 -- 4. Mostrar todas las salas que no proyectan película.
+
+
+SELECT Inmates.inmate_id AS INMATE_ID, Inmates.NAME, Gangs.gang_id AS GANG_ID, Gangs.GANG
+FROM Inmates
+INNER JOIN Gangs
+ON Inmates.inmate_id = Gangs.inmate_id
+ORDER BY Inmates.inmate_id ASC; 
 
 -- 5. Mostrar información de todas las salas, y si proyecta alguna película en la sala, mostrar información de la película.
 -- Also a SP
